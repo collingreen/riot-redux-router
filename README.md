@@ -69,8 +69,8 @@ Example usage -- 'custom-tag.tag'
   <a onclick={selectPage} url='page1'>Page 1</a>
   <a onclick={selectPage} url='page2'>Page 2</a>
 
-  <div class={hidden: state.router.current_url === 'page1'}>Page 1 FTW</div>
-  <div class={hidden: state.router.current_url === 'page2'}>Page 2 is Great</div>
+  <div class={hidden: state.router.current_url !== 'page1'}>Page 1 FTW</div>
+  <div class={hidden: state.router.current_url !== 'page2'}>Page 2 is Great</div>
 
   <div>Current Page: {state.router.current_url}</div>
 

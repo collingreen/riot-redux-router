@@ -38,11 +38,11 @@ var riot = require('riot')
 var redux = require('redux')
 var router = require('riot-redux-router')
 
-var reducer = require('./redux/reducer')
+var reducer = require('./app/reducer')
 
 var createStoreWithMiddleware = redux.compose(
   redux.applyMiddleware(router.middleware),
-  // window.devToolsExtension && window.devToolsExtension()
+  // your other middleware...
 )(redux.createStore)
 
 var reduxStore = createStoreWithMiddleware(reducer)
@@ -52,12 +52,12 @@ var reduxStore = createStoreWithMiddleware(reducer)
 Example top level reducer -- `router.current_url` will be set on route change
 ```
 var redux = require('redux')
-var nav = require('riot-redux-router')
+var router = require('riot-redux-router')
 
 
 module.exports = redux.combineReducers({
   router: router.reducer,
-  tasks: tasks.reducer
+  // your other reducers...
 })
 ```
 

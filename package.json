@@ -1,6 +1,6 @@
 {
   "name": "riot-redux-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "RiotJS Router + Redux Middleware",
   "main": "src/index.js",
   "scripts": {

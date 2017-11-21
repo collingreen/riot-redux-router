@@ -10,7 +10,7 @@ module.exports = {
 }
 
 // dispatch this to change the route
-function route(url) {
+function route (url) {
   return {
     type: ROUTER_GO_ACTION,
     data: url
@@ -18,7 +18,7 @@ function route(url) {
 }
 
 // dispatched by the middleware
-function routeChanged(url) {
+function routeChanged (url) {
   return {
     type: 'ROUTER_ROUTE_CHANGED',
     data: url

@@ -4,7 +4,7 @@
   "description": "RiotJS Router + Redux Middleware",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/collingreen/riot-redux-router/issues"
   },
-  "homepage": "https://github.com/collingreen/riot-redux-router#readme"
+  "homepage": "https://github.com/collingreen/riot-redux-router#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "redux": "^3.7.2"
+  },
+  "dependencies": {
+    "riot-route": "^3.1.2"
+  }
 }

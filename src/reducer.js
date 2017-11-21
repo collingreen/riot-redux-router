@@ -1,11 +1,14 @@
 var actions = require('./actions')
 
-module.exports = function(state, action) {
+module.exports = function (state, action) {
   state = state || { current_url: '' }
 
-  switch(action.type) {
+  switch (action.type) {
     case actions.ROUTER_ROUTE_CHANGED:
-      return Object.assign({}, state, {current_url: action.data})
+      return Object.assign({}, state, {
+        current_url: action.data,
+        previous_url: state.current_url
+      })
     default:
       return state
   }

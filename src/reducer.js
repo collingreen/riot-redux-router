@@ -6,7 +6,7 @@ module.exports = function (state, action) {
   switch (action.type) {
     case actions.ROUTER_ROUTE_CHANGED:
       return Object.assign({}, state, {
-        current_url: action.data,
+        current_url: action.payload,
         previous_url: state.current_url
       })
     default:

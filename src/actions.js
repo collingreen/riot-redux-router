@@ -13,7 +13,7 @@ module.exports = {
 function route (url) {
   return {
     type: ROUTER_GO_ACTION,
-    data: url
+    payload: url
   }
 }
 
@@ -21,6 +21,6 @@ function route (url) {
 function routeChanged (url) {
   return {
     type: 'ROUTER_ROUTE_CHANGED',
-    data: url
+    payload: url
   }
 }

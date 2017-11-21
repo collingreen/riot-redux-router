@@ -12,7 +12,7 @@ function riotRouterMiddleware (_ref) {
   // listen for riot router changes - re-dispatch with routeChanged
   route(function () {
     var args = Array.prototype.slice.call(arguments)
-    dispatch(actions.routeChanged(args.join(separator)))
+    dispatch(actions.routeChanged(args))
   })
 
   // set the base route separator

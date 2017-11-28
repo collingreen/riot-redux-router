@@ -1,8 +1,7 @@
 /* global riot */
 const expect = require('chai').expect
-
+import route from 'riot-route'
 import { combineReducers, compose, createStore, applyMiddleware } from 'redux'
-const route = require('riot-route')
 import { reducer, middleware as rrrMiddleware } from '../modules/'
 
 const reducers = combineReducers({ router: reducer })

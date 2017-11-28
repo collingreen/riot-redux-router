@@ -1,24 +1,39 @@
 {
-  "name": "riot-redux-router",
-  "version": "1.0.0",
-  "description": "RiotJS Router + Redux Middleware",
-  "main": "src/index.js",
+  "name": "redux-riot-router",
+  "version": "1.0.5",
+  "description": "Redux Middleware for RiotJS Router in ES6",
+  "main": "modules/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/collingreen/riot-redux-router.git"
+    "url": "git+https://github.com/continuata/riot-redux-router.git"
   },
   "keywords": [
     "riotjs",
     "redux",
     "router"
   ],
-  "author": "Collin Green <collin@collingreen.com> (https://collingreen.com)",
+  "author": "continuata <info@continuata.com> (http://continuata.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/collingreen/riot-redux-router/issues"
+    "url": "https://github.com/continuata/riot-redux-router/issues"
   },
-  "homepage": "https://github.com/collingreen/riot-redux-router#readme"
+  "homepage": "https://github.com/continuata/riot-redux-router#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "redux": "^3.7.2",
+    "redux-action-reducer": "^1.2.0",
+    "riot-route": "^3.1.2"
+  }
 }

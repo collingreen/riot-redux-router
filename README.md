@@ -1,7 +1,9 @@
-riot-redux-router
+redux-riot-router
 -----------------
 
 Dead simple integration between the riot js router and redux.
+(based on the excellent [riot-redux-router](https://github.com/collingreen/riot-redux-router) by Collin Green)
+Now supports RiotJS v3 with separated [riot-route](https://github.com/riot/route) module
 
 Combine Riot's router and redux so you can easily dispatch route actions to
 simultaneously update your store and the browser url. Does very little else -

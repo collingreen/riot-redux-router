@@ -1,17 +1,16 @@
-var route = require('riot-route')
-
-var actions = require('./actions')
+import route from 'riot-route'
+import actions from './actions'
 
 // URL separator for riot router
-var separator = '/'
+const separator = '/'
 
 function riotRouterMiddleware (_ref) {
-  var dispatch = _ref.dispatch
-  var getState = _ref.getState
+  const dispatch = _ref.dispatch
+  const getState = _ref.getState
 
   // listen for riot router changes - re-dispatch with routeChanged
   route(function () {
-    var args = Array.prototype.slice.call(arguments)
+    const args = Array.prototype.slice.call(arguments)
     dispatch(actions.routeChanged(args))
   })
 
@@ -21,14 +20,11 @@ function riotRouterMiddleware (_ref) {
   // start listening to routes immediately
   route.start(true)
 
-  return function (next) {
-    return function (action) {
-      // allow everything except ROUTER_GO_ACTION through
-      if (action.type !== actions.ROUTER_GO_ACTION) {
-        next(action)
-      }
+  return (next) => (action) => {
+    // allow everything except ROUTER_GO_ACTION through
+    if (action.type !== 'ROUTER_GO_ACTION') {
+      next(action)
     }
   }
 }
-
 module.exports = riotRouterMiddleware

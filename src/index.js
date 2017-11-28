@@ -1,5 +1,9 @@
+import reducer from './reducer'
+import actions from './actions'
+import middleware from './middleware'
+
 module.exports = {
-  reducer: require('./reducer'),
-  actions: require('./actions'),
-  middleware: require('./middleware')
+  reducer,
+  actions,
+  middleware
 }

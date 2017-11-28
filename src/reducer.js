@@ -1,15 +1,6 @@
-var actions = require('./actions')
+import createReducer from 'redux-action-reducer'
 
-module.exports = function (state, action) {
-  state = state || { current_url: '' }
-
-  switch (action.type) {
-    case actions.ROUTER_ROUTE_CHANGED:
-      return Object.assign({}, state, {
-        current_url: action.payload,
-        previous_url: state.current_url
-      })
-    default:
-      return state
-  }
-}
+module.exports = createReducer(
+  ['ROUTER_ROUTE_CHANGED', (state, payload) =>
+    ({ ...state, current_url: payload, previous_url: state.current_url })]
+)({ current_url: '' })

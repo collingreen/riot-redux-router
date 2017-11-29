@@ -1,7 +1,7 @@
 var assert = require('chai').assert
 
 var redux = require('redux')
-var riot = require('riot')
+var route = require('riot-route')
 var rrr = require('../src/')
 
 var reducers = redux.combineReducers({
@@ -18,7 +18,7 @@ describe('#store', function() {
 
   it('should store the current route in the state', function() {
     var targetUrl = '/foo/bar/baz'
-    riot.route(targetUrl)
+    route(targetUrl)
     var state = store.getState()
     assert.equal(
       state.router.current_url,
@@ -30,8 +30,8 @@ describe('#store', function() {
     var firstUrl = '/foo'
     var secondUrl = '/bar'
 
-    riot.route(firstUrl)
-    riot.route(secondUrl)
+    route(firstUrl)
+    route(secondUrl)
 
     var state = store.getState()
     assert.equal(
@@ -44,8 +44,8 @@ describe('#store', function() {
     var firstUrl = '/foo'
     var secondUrl = '/bar'
 
-    riot.route(firstUrl)
-    riot.route(secondUrl)
+    route(firstUrl)
+    route(secondUrl)
 
     var state = store.getState()
     assert.equal(

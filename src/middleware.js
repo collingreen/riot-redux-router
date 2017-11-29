@@ -1,4 +1,4 @@
-var riot = require('riot')
+var route = require('riot-route')
 
 var actions = require('./actions')
 
@@ -10,26 +10,26 @@ function riotRouterMiddleware(_ref) {
   var getState = _ref.getState
 
   // listen for riot router changes - re-dispatch with routeChanged
-  riot.route(function() {
+  route(function() {
     var args = Array.prototype.slice.call(arguments)
     dispatch(actions.routeChanged(args.join(separator)))
   })
 
   // set the base route separator
-  riot.route.base(separator)
+  route.base(separator)
 
-  // start listening to routes immediately
-  riot.route.start(true)
+  // start listening to routes immediately (required to pick up initial url)
+  route.start(true)
 
   return function (next) {
     return function (action) {
       // allow everything except ROUTER_GO_ACTION through
       if (action.type !== actions.ROUTER_GO_ACTION) {
         next(action)
+      } else {
+        // call riot router using action payload
+        route(action.data)
       }
-
-      // call riot router using action payload
-      riot.route(action.data)
     }
   }
 }

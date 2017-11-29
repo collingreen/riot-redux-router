@@ -1,7 +1,7 @@
 riot-redux-router
 -----------------
 
-Dead simple integration between the riot js router and redux.
+Dead simple integration between the riot js router (v3) and redux.
 
 Combine Riot's router and redux so you can easily dispatch route actions to
 simultaneously update your store and the browser url. Does very little else -
@@ -34,7 +34,6 @@ current url in the store.
 
 Example initialization - add the router.middleware to redux
 ```
-var riot = require('riot')
 var redux = require('redux')
 var router = require('riot-redux-router')
 

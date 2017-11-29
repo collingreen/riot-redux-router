@@ -73,6 +73,7 @@ Example usage -- 'custom-tag.tag'
   <div class={hidden: state.router.current_url !== 'page2'}>Page 2 is Great</div>
 
   <div>Current Page: {state.router.current_url}</div>
+  <div>Previous Page: {state.router.previous_url}</div>
 
   <style scoped>
     .hidden { display: none; }

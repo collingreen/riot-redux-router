@@ -12,12 +12,12 @@ describe('test middleware and reducers', function () {
   it('sets the correct state in redux when changing route', function () {
     route('/foo/bar/baz')
     const state = store.getState()
-    expect(state.router).to.eql({ current_url: ['foo', 'bar', 'baz'], previous_url: '' })
+    expect(state.router).to.eql({ current_url: 'foo/bar/baz', previous_url: '' })
   })
 
   it('retains the previous url in state when changing route', function () {
     route('/')
     const state = store.getState()
-    expect(state.router).to.eql({ current_url: [''], previous_url: ['foo', 'bar', 'baz'] })
+    expect(state.router).to.eql({ current_url: '', previous_url: 'foo/bar/baz' })
   })
 })
